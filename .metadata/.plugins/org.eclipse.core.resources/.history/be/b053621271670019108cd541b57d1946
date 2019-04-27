@@ -1,0 +1,5 @@
+package com.rishad.location.web.entities;
+
+public class Location {
+
+}

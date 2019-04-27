@@ -1,0 +1,22 @@
+package com.rishad.location.web.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.rishad.location.web.entities.Location;
+
+@Controller
+public class LocationController {
+
+	
+	@RequestMapping("/showCreateLocation")
+	public String showCreate() {
+		return "createLocation";
+	}
+	
+	@RequestMapping("/saveLocation")
+	public String saveLocations(@ModelAttribute("location") Location location) {
+		return "createLocation";
+	}
+}

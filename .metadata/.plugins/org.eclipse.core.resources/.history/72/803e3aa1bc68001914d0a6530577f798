@@ -1,0 +1,5 @@
+package com.rishad.location.web.controllers;
+
+public class LocationController {
+
+}

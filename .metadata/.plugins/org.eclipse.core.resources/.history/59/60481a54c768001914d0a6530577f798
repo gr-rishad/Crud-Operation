@@ -1,0 +1,31 @@
+package com.rishad.location.web.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.rishad.location.web.entities.Location;
+import com.rishad.location.web.services.LocationService;
+
+@Controller
+public class LocationController {
+	
+	@Autowired
+	private LocationService service;
+
+	
+	@RequestMapping("/showCreateLocation")
+	public String showCreate() {
+		return "createLocation";
+	}
+	
+	@RequestMapping("/saveLocation")
+	public String saveLocations(@ModelAttribute("location") Location location,ModelMap modelMap) {
+		Location locationSaved= service.saveLocation(location);
+		String msg= "Location Saved"+locationSaved.getId();
+		modelMap.addAttribute("msg", msg);
+		return "createLocation";
+	}
+}

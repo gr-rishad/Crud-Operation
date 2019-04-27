@@ -1,0 +1,5 @@
+package com.rishad.location.web.services;
+
+public interface LocationService {
+
+}
